@@ -5,7 +5,7 @@ int main(void)
 {
 	int month,day,year,week,c,y,m;//c为世纪-1，y为年份后两位,m为月 
 	
-	printf("Enter date (mm/dd/yy): ");
+	printf("Enter date (mm/dd/yyyy): ");
 	scanf("%d /%d /%d",&month,&day,&year);
 	
 	printf("Dated this %d",day);
