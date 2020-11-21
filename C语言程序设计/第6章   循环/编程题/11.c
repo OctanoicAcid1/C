@@ -1,4 +1,5 @@
 //根据e=1+1/1!+1/2！+1/3！+...计算e
+//有误 
 
 #include<stdio.h>
 int main(void)
