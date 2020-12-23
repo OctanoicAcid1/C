@@ -1,0 +1,62 @@
+#include<stdio.h>
+int main(void)
+{
+	int i,j,t,z,x,y,p=0,q=0,n,num[200],ch[200],num1[200],num2[200],num3[200],num4[200];
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		for(j=0;;j++){
+			scanf("%d",&num[j]);
+			scanf("%c",&ch[j]);
+			if(ch[j]=='\n')
+			  break;
+		}
+		x=0;
+		y=0;
+		for(t=0;t<=j;t++){
+			if(num[t]%2==1){
+				num1[x]=num[t];
+				x++;
+			}
+			else{
+				num2[y]=num[t];
+				y++;
+			}
+		}
+		for(t=0;t<x;t++){//起 
+			for(z=0;z<x;z++){
+				if(num1[z]<num1[t])
+				  p++;
+				if(num1[z]==num1[t]){ 
+				    q++;
+				    if(z<=t)
+				      q--;
+				} 
+			}
+			num3[p+q]=num1[t]; 
+			p=0;
+			q=0; 
+		}//终（自建排序，记得记录） 
+		for(t=0;t<y;t++){
+			for(z=0;z<y;z++){
+				if(num2[z]<num2[t])
+				  p++;
+				if(num2[z]==num2[t]){ 
+				    q++;
+				    if(z<=t)
+				      q--;
+				} 
+			}
+			num4[p+q]=num2[t]; 
+			p=0;
+			q=0; 
+		}
+		for(t=0;t<x;t++){
+			printf("%d ",num3[t]);
+		}
+		for(t=0;t<y;t++){
+			printf("%d ",num4[t]);
+		}
+		printf("\n");
+	}
+	return 0;
+ } 
